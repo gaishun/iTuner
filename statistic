@@ -1,0 +1,6 @@
+
+FILE=/proc/interrupts 
+CORES=`lscpu | grep  CPU\(s\) | head -n 1 | awk '{print $2}'`
+DEVICE_NAME=${1}
+
+python3 ./statistic.py ${FILE} ${DEVICE_NAME} ${CORES}
